@@ -82,12 +82,14 @@ namespace GradeBook.GradeBooks
                 Console.WriteLine("Gradebook could not be found.");
                 return null;
             }
+            BaseGradeBook gradeBook;
 
             using (var file = new FileStream(name + ".gdbk", FileMode.Open, FileAccess.Read))
             {
                 using (var reader = new StreamReader(file))
                 {
                     var json = reader.ReadToEnd();
+                   
                     return ConvertToGradeBook(json);
                 }
             }
