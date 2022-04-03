@@ -50,6 +50,7 @@ public class RankedGradeBook : BaseGradeBook
             if(Students.Count < 5)
             {
                 Console.WriteLine("Ranked grading requires at least 5 students.");
+                return;
             }
             
             base.CalculateStatistics();
